@@ -13,6 +13,7 @@ namespace ViewModelLocator
     {
         /// <summary>
         ///     detects via reflection whether we are in DesignMode or not
+        ///     Idea from MVVM Light (https://github.com/lbugnion/mvvmlight/)
         /// </summary>
         public static bool IsInDesignMode => DetectDesignMode();
 
