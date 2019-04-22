@@ -28,9 +28,37 @@ DesignTime vs Runtime :
 
 
 ----
-Sadly this produces an Resharper error:
+Sadly this produces an Resharper error, because of the ILocator interface:
+
+```csharp
+ public interface ILocator
+ {        
+    void Register(string name, object o);
+    object Locate(string name);
+    object this[string name] { get; }
+ }
+
+````
 
 ![Error](Resharper.png)
+
+
+
+
+When changed to IMainWindowViewModel, R# can lookup the Properties and the warnings are gone. 
+This way the Locator obviously cannot be used globally. :(
+
+```csharp
+ public interface ILocator
+ {        
+    void Register(string name, object o);
+    IMainWindowViewModel Locate(string name);
+    object this[string name] { get; }
+ }
+
+````
+![No more Warnings](Resharper_no_warnings.png)
+
 
 Debugging tipps
 

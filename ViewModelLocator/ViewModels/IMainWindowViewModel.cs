@@ -2,7 +2,7 @@
 
 namespace ViewModelLocator.ViewModels
 {
-    internal interface IMainWindowViewModel
+    public interface IMainWindowViewModel
     {
         List<string> Items { get; set; }
         string WelcomeMessage { get; set; }

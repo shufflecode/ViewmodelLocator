@@ -1,4 +1,6 @@
-﻿namespace ViewModelLocator.Locators
+﻿using ViewModelLocator.ViewModels;
+
+namespace ViewModelLocator.Locators
 {
     public interface ILocator
     {        
